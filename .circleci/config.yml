@@ -1,14 +1,14 @@
 version: 2
-  jobs:
-    build:
-      docker:
+  jobs: 
+    build: 
+      docker: 
         - image: circleci/android:api-28-node
       working_directory: ~/repo
-      environment:
+      environment: 
         JVM_OPTS: -Xmx3200m
-      steps:
+      steps: 
         - checkout
-        - run: 
+        - run:  
             name: "Install gradle"
             command: |
               wget https://services.gradle.org/distributions/gradle-4.0.2-bin.zip -P /tmp
@@ -16,7 +16,7 @@ version: 2
               echo 'export GRADLE_HOME=/opt/gradle/gradle-4.0.2' >> $BASH_ENV
               echo 'export PATH=$PATH:/opt/gradle/gradle-4.0.2/bin' >> $BASH_ENV
               source $BASH_ENV
-        - run:
+        - run: 
             name: "Install ionic and cordova"
             command: |
               sudo npm install -g ionic cordova yarn
